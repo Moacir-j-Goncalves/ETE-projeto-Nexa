@@ -1,6 +1,13 @@
+// Importa hooks do React Router para navegação e parâmetros da URL
 import { useNavigate, useParams } from 'react-router-dom';
+
+// Importa o menu principal
 import Menu from '../../Componentes/Menu/index.js';
+
+// Imagem de fundo
 import fundo from '../../Componentes/Imagens/nexa_fundo.jpg';
+
+// CSS do componente
 import './PerfilSalao.css';
 
 // Imagens dos perfis
@@ -8,7 +15,9 @@ import studioBellaImg from '../../Componentes/Imagens/Studiobella.jpg';
 import espacoGlamourImg from '../../Componentes/Imagens/EspacoGlamour.jpg';
 import beautyCenterImg from '../../Componentes/Imagens/BeautyCenter.jpg';
 import guilhermeMendesImg from '../../Componentes/Imagens/GuilhermeMendes.jpg';
+import camilaoliveiraImg from '../../Componentes/Imagens/CamilaOliveira.jpg';
 
+// Objeto com todos os perfis
 const saloes = {
   1: {
     nome: 'Studio Bella',
@@ -58,6 +67,28 @@ const saloes = {
     ],
   },
   4: {
+    nome: 'Camila Oliveira',
+    foto: camilaoliveiraImg, // usa a imagem correta
+    descricao: 'Profissional renomada em estética e beleza, referência em cuidados personalizados e atendimento exclusivo...',
+    categoria: 'Profissional de Beleza',
+    cidade: 'Recife - PE',
+    distancia: '3.8 km',
+    avaliacao: 4.9,
+    totalAvaliacoes: 87,
+    servicos: [
+      'Design de sobrancelhas',
+      'Maquiagem profissional',
+      'Tratamento facial',
+      'Consultoria de imagem',
+      'Harmonização estética'
+    ],
+    avaliacoes: [
+      { nome: 'Larissa M.', nota: 5, comentario: 'Camila é super atenciosa e talentosa!' },
+      { nome: 'Patrícia R.', nota: 4, comentario: 'Adorei o atendimento, recomendo.' },
+      { nome: 'João P.', nota: 5, comentario: 'Profissional excelente, muito dedicada.' },
+    ],
+  },
+  5: {
     nome: 'LUMOS BEAUTY SPA',
     foto: espacoGlamourImg,
     descricao: 'O Lumos Beauty Spa é mais do que um ambiente, é uma experiência...',
@@ -75,6 +106,7 @@ const saloes = {
   },
 };
 
+// Função que desenha estrelas de acordo com a nota
 function estrelas(nota) {
   return Array.from({ length: 5 }, (_, i) => (
     <span key={i} style={{ color: i < Math.round(nota) ? '#c0392b' : '#ddd', fontSize: '16px' }}>★</span>
@@ -82,15 +114,18 @@ function estrelas(nota) {
 }
 
 export default function PerfilSalao() {
-  const navigate = useNavigate();
-  const { id } = useParams(); // pega o id da URL
-  const salao = saloes[id] || saloes[1];
+  const navigate = useNavigate(); // hook para navegar
+  const { id } = useParams(); // pega o id da URL (ex: /perfil/4)
+  const salao = saloes[id] || saloes[1,2,3,4]; // seleciona o perfil pelo id
+
+  // aplica classe diferente para profissional
+  const cardClass = salao.categoria === 'Profissional de Beleza' ? 'perfil-profissional-card' : 'perfil-salao-card';
 
   return (
     <div style={{ backgroundImage: `url(${fundo})`, backgroundSize: 'cover', minHeight: '100vh' }}>
       <Menu />
       <div className="perfil-salao-container">
-        <div className="perfil-salao-card">
+        <div className={cardClass}>
 
           {/* Foto */}
           <img src={salao.foto} alt={salao.nome} className="perfil-salao-foto" />
