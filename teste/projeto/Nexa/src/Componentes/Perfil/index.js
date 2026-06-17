@@ -13,7 +13,27 @@ function Perfil() {
   }
 
   function handleSalvar() {
+    if (!dados.nome || !dados.telefone || !dados.email) {
+      alert('Preencha todos os campos obrigatórios!');
+      return;
+    }
+
+    // Validação simples de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(dados.email)) {
+      alert('Digite um email válido!');
+      return;
+    }
+
+    // Validação simples de telefone
+    const telefoneRegex = /^\(\d{2}\)\s?\d{5}-\d{4}$/;
+    if (!telefoneRegex.test(dados.telefone)) {
+      alert('Digite um telefone válido no formato (00) 00000-0000!');
+      return;
+    }
+
     alert('Dados salvos com sucesso!');
+    // Aqui você pode integrar com uma API ou salvar em localStorage
   }
 
   return (
@@ -22,7 +42,7 @@ function Perfil() {
 
         <div className="perfil-header">
           <div className="perfil-avatar">
-            <span>C</span>
+            <span>{dados.nome ? dados.nome.charAt(0).toUpperCase() : 'C'}</span>
           </div>
           <div className="perfil-header-info">
             <p className="perfil-label">PERFIL CLIENTE</p>
@@ -35,18 +55,38 @@ function Perfil() {
 
         <div className="perfil-form">
           <div className="perfil-campo">
-            <label>Nome</label>
-            <input name="nome" value={dados.nome} onChange={handleChange} placeholder="Seu nome" />
+            <label htmlFor="nome">Nome</label>
+            <input 
+              id="nome" 
+              name="nome" 
+              value={dados.nome} 
+              onChange={handleChange} 
+              placeholder="Seu nome" 
+            />
           </div>
 
           <div className="perfil-campo">
-            <label>Telefone</label>
-            <input name="telefone" value={dados.telefone} onChange={handleChange} placeholder="(00) 00000-0000" />
+            <label htmlFor="telefone">Telefone</label>
+            <input 
+              id="telefone" 
+              type="tel" 
+              name="telefone" 
+              value={dados.telefone} 
+              onChange={handleChange} 
+              placeholder="(00) 00000-0000" 
+            />
           </div>
 
           <div className="perfil-campo">
-            <label>Email</label>
-            <input name="email" value={dados.email} onChange={handleChange} placeholder="seu@email.com" />
+            <label htmlFor="email">Email</label>
+            <input 
+              id="email" 
+              type="email" 
+              name="email" 
+              value={dados.email} 
+              onChange={handleChange} 
+              placeholder="seu@email.com" 
+            />
           </div>
 
           <div className="perfil-divider">◆</div>
