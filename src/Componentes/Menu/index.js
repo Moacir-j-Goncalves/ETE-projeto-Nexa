@@ -31,13 +31,9 @@ function Menu() {
         <button className="menu-botao" onClick={() => { navigate('/profissional'); setAberto(false); }}>Profissional</button>
         <button className="menu-botao" onClick={() => { navigate('/area-do-cliente'); setAberto(false); }}>Área do Cliente</button>
         <button className="menu-botao" onClick={() => { navigate('/agendamento'); setAberto(false); }}>Agendar Horário</button>
-        <button className="menu-botao" onClick={() => setAberto(false)}>Sobre nós</button>
+         <button className="menu-botao" onClick={() => { navigate('/sobre-nexa'); setAberto(false); }}>Sobre nós</button>
         <button className="menu-botao" onClick={() => setAberto(false)}>Página do associado</button>
-        
-        {/* Correção aqui: habilita a Central de Ajuda */}
-        <button className="menu-botao" onClick={() => { navigate('/central-de-ajuda'); setAberto(false); }}>
-          Central de Ajuda
-        </button>
+        <button className="menu-botao" onClick={() => { navigate('/central-de-ajuda'); setAberto(false); }}>Central de Ajuda</button>
       </div>
     </div>
   );

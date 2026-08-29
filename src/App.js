@@ -17,6 +17,7 @@ import PerfilSalao from './Paginas/PerfilSalao';
 import Centraldeajuda from './Paginas/CentralDeAjuda';
 import Assinatura from './Paginas/Assinatura';
 import Pagamento from './Paginas/Pagamentos';
+import SobreNexa from "./Paginas/Sobre/SobreNexa";
 
 import { useParams } from 'react-router-dom';
 
@@ -47,6 +48,7 @@ function App() {
         <Route path="/central-de-ajuda" element={<Centraldeajuda />} />
         <Route path="/assinatura" element={<Assinatura />} />
         <Route path="/pagamento" element={<Pagamento />} />
+        <Route path="/sobre-nexa" element={<SobreNexa />} />
       </Routes>
     </BrowserRouter>
   );
