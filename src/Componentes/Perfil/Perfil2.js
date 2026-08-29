@@ -20,8 +20,8 @@ function Perfil2() {
     email: '',
     cep: '',
     rua: '',
-    numero: '',
     bairro: '',
+    numero: '',
     complemento: '',
   });
 
@@ -97,8 +97,8 @@ function Perfil2() {
               <label>Endereço</label>
               <input name="cep" value={dados.cep} onChange={handleChange} placeholder="CEP" />
               <input name="rua" value={dados.rua} onChange={handleChange} placeholder="Rua" />
-              <input name="numero" value={dados.numero} onChange={handleChange} placeholder="Número" />
               <input name="bairro" value={dados.bairro} onChange={handleChange} placeholder="Bairro" />
+              <input name="numero" value={dados.numero} onChange={handleChange} placeholder="Número" />
               <input name="complemento" value={dados.complemento} onChange={handleChange} placeholder="Complemento" />
             </div>
 
