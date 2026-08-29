@@ -17,7 +17,7 @@ import PerfilSalao from './Paginas/PerfilSalao';
 import Centraldeajuda from './Paginas/CentralDeAjuda';
 import Assinatura from './Paginas/Assinatura';
 import Pagamento from './Paginas/Pagamentos';
-import SobreNexa from "./Paginas/Sobre/SobreNexa";
+import SobreNexa from "./Paginas/SobreNexa";
 
 import { useParams } from 'react-router-dom';
 
