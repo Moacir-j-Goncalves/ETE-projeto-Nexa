@@ -33,8 +33,6 @@ function Menu() {
         <button className="menu-botao" onClick={() => { navigate('/agendamento'); setAberto(false); }}>Agendar Horário</button>
         <button className="menu-botao" onClick={() => { navigate('/sobre'); setAberto(false); }}>Sobre nós</button>
         <button className="menu-botao" onClick={() => { navigate('/assinatura'); setAberto(false); }}>Página do associado</button>
-        
-        {/* Correção aqui: habilita a Central de Ajuda */}
         <button className="menu-botao" onClick={() => { navigate('/central-de-ajuda'); setAberto(false); }}>
           Central de Ajuda
         </button>

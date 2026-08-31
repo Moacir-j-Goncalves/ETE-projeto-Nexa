@@ -7,7 +7,8 @@ import fundo from "../../Componentes/Imagens/nexa_fundo.jpg"; // Imagem usada co
 function Profissional() {
   const navigate = useNavigate(); // Hook que permite redirecionar o usuário para outras rotas
 
-  // Função auxiliar que cria os "balões" (cards clicáveis)
+  // Componente auxiliar "Card" para criar os balões clicáveis
+  // Recebe três props: titulo, descricao e destino
   const Card = ({ titulo, descricao, destino }) => (
     <div
       onClick={() => navigate(destino)} // Ao clicar, redireciona para a rota indicada
@@ -57,7 +58,7 @@ function Profissional() {
       {/* Menu de navegação */}
       <Menu />
 
-      {/* Container principal */}
+      {/* Container principal que organiza os cards em coluna centralizada */}
       <div
         style={{
           display: "flex",

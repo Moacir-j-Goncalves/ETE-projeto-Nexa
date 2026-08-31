@@ -58,6 +58,8 @@ function Atendimentos() {
               {/* Informações do agendamento */}
               <p className="agendamento-data">{a.data}</p>
               <p className="agendamento-servico">{a.servico}</p>
+
+              {/* Badge de status */}
               <span className={"agendamento-status " + a.status}>
                 {a.status === 'confirmado' ? 'Confirmado' : 'Pendente'}
               </span>

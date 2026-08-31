@@ -13,8 +13,8 @@ function Perfil2() {
     email: '',
     cep: '',
     rua: '',
-    numero: '',
     bairro: '',
+    numero: '',
     complemento: '',
   });
 
@@ -60,8 +60,6 @@ function Perfil2() {
 
           {/* Formulário de edição */}
           <div className="perfil-form">
-            
-            {/* Campo Nome */}
             <div className="perfil-campo">
               <label>Nome</label>
               <input 
@@ -72,7 +70,6 @@ function Perfil2() {
               />
             </div>
 
-            {/* Campo Telefone */}
             <div className="perfil-campo">
               <label>Telefone</label>
               <input 
@@ -83,7 +80,6 @@ function Perfil2() {
               />
             </div>
 
-            {/* Campo Email */}
             <div className="perfil-campo">
               <label>Email</label>
               <input 
@@ -94,7 +90,6 @@ function Perfil2() {
               />
             </div>
 
-            {/* Campos de Endereço */}
             <div className="perfil-campo">
               <label>Endereço</label>
               <input name="cep" value={dados.cep} onChange={handleChange} placeholder="CEP" />
@@ -107,7 +102,6 @@ function Perfil2() {
             {/* Divisor visual */}
             <div className="perfil-divider">◆</div>
 
-            {/* Campo CNPJ (não editável) */}
             <div className="perfil-campo">
               <label>CNPJ <span className="nao-editavel">(não editável)</span></label>
               <input value="00.000.000/0000-00" disabled />
@@ -118,7 +112,6 @@ function Perfil2() {
           <button className="perfil-btn" onClick={handleSalvar}>
             Salvar alterações
           </button>
-
         </div>
       </div>
     </div> 

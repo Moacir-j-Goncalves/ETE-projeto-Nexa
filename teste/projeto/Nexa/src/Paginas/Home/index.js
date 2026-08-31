@@ -108,6 +108,7 @@ function Home() {
 <div className="professional-card" onClick={() => navigate('/perfil-salao/3')}>
   <img src={beautyCenterImg} alt="Beauty Center" className="card-img" />
   <h3>Beauty Center</h3>
+  
   <p>⭐ 5.0</p>
   <button onClick={(e) => { e.stopPropagation(); navigate('/perfil-salao/3'); }}>Ver Perfil</button>
 </div>
