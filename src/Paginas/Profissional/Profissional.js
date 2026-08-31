@@ -7,7 +7,8 @@ import fundo from "../../Componentes/Imagens/nexa_fundo.jpg"; // Imagem usada co
 function Profissional() {
   const navigate = useNavigate(); // Hook que permite redirecionar o usuário para outras rotas
 
-  // Componente "Card" para criar os balões clicáveis
+  // Componente auxiliar "Card" para criar os balões clicáveis
+  // Recebe três props: titulo, descricao e destino
   const Card = ({ titulo, descricao, destino }) => (
     <div
       onClick={() => navigate(destino)} // Ao clicar, redireciona para a rota indicada
@@ -20,7 +21,7 @@ function Profissional() {
         cursor: "pointer",
       }}
     >
-      {/* Mostra o título recebido por prop */}
+      {/* Título do card */}
       <p
         style={{
           color: "#3d0c0c",
@@ -32,7 +33,7 @@ function Profissional() {
         {titulo}
       </p>
 
-      {/* Mostra a descrição recebida por prop */}
+      {/* Descrição do card */}
       <p
         style={{
           color: "#9e6b6b",
@@ -54,10 +55,10 @@ function Profissional() {
         minHeight: "100vh",
       }}
     >
-      {/* Renderiza a barra de menu no topo */}
+      {/* Menu de navegação */}
       <Menu />
 
-      {/* Div que organiza os cards em coluna centralizada */}
+      {/* Container principal que organiza os cards em coluna centralizada */}
       <div
         style={{
           display: "flex",
@@ -67,7 +68,7 @@ function Profissional() {
           gap: "16px", // Espaçamento entre os elementos
         }}
       >
-        {/* Título da página */}
+        {/* Título da área */}
         <h2
           style={{
             color: "#fdf6f0",
@@ -78,7 +79,7 @@ function Profissional() {
           Área do Profissional
         </h2>
 
-        {/* Cards de navegação */}
+        {/* Balões de navegação */}
         <Card
           titulo="Editar Perfil"
           descricao="Altere informações do seu estabelecimento"
@@ -99,6 +100,7 @@ function Profissional() {
           descricao="Conheça mais sobre nosso estabelecimento"
           destino="/sobre"
         />
+        {/* Novo balão de Assinatura */}
         <Card
           titulo="Assinatura"
           descricao="Gerencie seu plano de divulgação"
@@ -109,5 +111,5 @@ function Profissional() {
   );
 }
 
-// Exporta o componente para ser usado no App.js
+// Exporta o componente para uso em outras partes da aplicação
 export default Profissional;

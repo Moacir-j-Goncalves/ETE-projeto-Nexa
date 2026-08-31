@@ -1,14 +1,8 @@
-// Importa o useState para guardar e atualizar a lista de agendamentos
-import { useState } from 'react';
-
-// Importa o componente Menu (barra de navegação)
-import Menu from '../../Componentes/Menu/index.js';
-
-// Importa a imagem de fundo
-import fundo from '../../Componentes/Imagens/nexa_fundo.jpg';
-
-// Importa o arquivo de estilos da página
-import './atendimentos.css';
+// Importações necessárias
+import { useState } from 'react'; // Hook do React para gerenciar estado
+import Menu from '../../Componentes/Menu/index.js'; // Componente de menu
+import fundo from '../../Componentes/Imagens/nexa_fundo.jpg'; // Imagem usada como fundo
+import './atendimentos.css'; // Estilos específicos para este componente
 
 // Componente principal
 function Atendimentos() {
@@ -23,7 +17,7 @@ function Atendimentos() {
 
   // Função para cancelar um agendamento
   function handleCancelar(id) {
-    // Remove o agendamento da lista filtrando os que têm id diferente
+    // Remove o agendamento da lista
     setAgendamentos(agendamentos.filter(a => a.id !== id));
     // Reseta o estado de confirmação
     setConfirmarId(null);
@@ -31,13 +25,16 @@ function Atendimentos() {
 
   // Estrutura visual do componente
   return (
-    // Div principal com imagem de fundo ocupando a tela toda
-    <div style={{ backgroundImage: "url(" + fundo + ")", backgroundSize: 'cover', minHeight: '100vh' }}>
-      
-      {/* Renderiza a barra de menu no topo */}
+    <div 
+      style={{ 
+        backgroundImage: "url(" + fundo + ")", 
+        backgroundSize: 'cover', 
+        minHeight: '100vh' 
+      }}
+    >
+      {/* Menu de navegação */}
       <Menu/>
 
-      {/* Container que centraliza o card na tela */}
       <div className="agendamentos-container">
         <div className="agendamentos-card">
           
@@ -45,7 +42,7 @@ function Atendimentos() {
           <p className="agendamentos-label">ÁREA DO PROFISSIONAL</p>
           <h1 className="agendamentos-titulo">Meus Atendimentos</h1>
 
-          {/* Divisor visual decorativo */}
+          {/* Divisor visual */}
           <div className="agendamentos-divider">◆</div>
 
           {/* Mensagem caso não haja agendamentos */}
@@ -62,7 +59,7 @@ function Atendimentos() {
               <p className="agendamento-data">{a.data}</p>
               <p className="agendamento-servico">{a.servico}</p>
 
-              {/* Badge de status: aplica classe "confirmado" ou "pendente" */}
+              {/* Badge de status */}
               <span className={"agendamento-status " + a.status}>
                 {a.status === 'confirmado' ? 'Confirmado' : 'Pendente'}
               </span>
@@ -71,22 +68,36 @@ function Atendimentos() {
               {confirmarId === a.id ? (
                 <div className="confirmar-cancelamento">
                   <p>Deseja cancelar este atendimento?</p>
-                  <button className="btn-sim" onClick={() => handleCancelar(a.id)}>Sim, cancelar</button>
-                  <button className="btn-nao" onClick={() => setConfirmarId(null)}>Não</button>
+                  <button 
+                    className="btn-sim" 
+                    onClick={() => handleCancelar(a.id)}
+                  >
+                    Sim, cancelar
+                  </button>
+                  <button 
+                    className="btn-nao" 
+                    onClick={() => setConfirmarId(null)}
+                  >
+                    Não
+                  </button>
                 </div>
               ) : (
                 // Botão para iniciar processo de cancelamento
-                <button className="btn-cancelar" onClick={() => setConfirmarId(a.id)}>
+                <button 
+                  className="btn-cancelar" 
+                  onClick={() => setConfirmarId(a.id)}
+                >
                   Cancelar atendimento
                 </button>
               )}
             </div>
           ))}
+
         </div>
       </div>
     </div>
   );
 }
 
-// Exporta o componente para ser usado no App.js
+// Exporta o componente para uso em outras partes da aplicação
 export default Atendimentos;
