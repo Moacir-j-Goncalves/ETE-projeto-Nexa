@@ -7,14 +7,14 @@ import fundo from '../../Componentes/Imagens/nexa_fundo.jpg';
 import Menu from '../../Componentes/Menu/index';
 
 const recomendacoes = [
-  { id: 1, nome: 'Studio Bella', cargo: 'salao', cidade: 'Igarassu - PE', distancia: '3.2 km', iniciais: 'SB', cor: '#6B7C5A', categoria: 'saloes' },
+  { id: 1, nome: 'Studio Bella', cargo: 'Salão', cidade: 'Igarassu - PE', distancia: '3.2 km', iniciais: 'SB', cor: '#6B7C5A', categoria: 'saloes' },
   { id: 2, nome: 'Guilherme Mendes', cargo: 'Personal Trainer', cidade: 'Recife - PE', distancia: '5.4 km', iniciais: 'GM', cor: '#5C6E7B', categoria: 'academia' },
   { id: 3, nome: 'Camila Oliveira', cargo: 'Manicure', cidade: 'Abreu e Lima - PE', distancia: '9.0 km', iniciais: 'CO', cor: '#e5a4eb', categoria: 'manicure' },
   { id: 4, nome: 'LUMOS BEAUTY SPA', cargo: 'SPA', cidade: 'Recife - PE', distancia: '9.0 km', iniciais: 'Lumos', cor: '#6B7C5A', categoria: 'estetica' },
+  { id: 5, nome: 'Beauty Center', cargo: 'Centro de Beleza', cidade: 'Recife - PE', distancia: '3.8 km', iniciais: 'BC', cor: '#a4cceb', categoria: 'centro' }
 ];
-
 const vagas = [
-  { id: 1, titulo: 'Beauty Center', empresa: 'Centro de Beleza ', distancia: '2.1 km', categoria: 'saloes' },
+  { id: 5, titulo: 'Beauty Center', empresa: 'Centro de Beleza ', distancia: '2.1 km', categoria: 'saloes' },
 ];
 
 export default function Buscar() {

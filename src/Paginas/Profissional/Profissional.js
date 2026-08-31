@@ -1,14 +1,16 @@
-import { useNavigate } from "react-router-dom";
-import Menu from "../../Componentes/Menu";
-import fundo from "../../Componentes/Imagens/nexa_fundo.jpg";
+// Importações necessárias
+import { useNavigate } from "react-router-dom"; // Hook do React Router para navegação programática
+import Menu from "../../Componentes/Menu"; // Componente de menu
+import fundo from "../../Componentes/Imagens/nexa_fundo.jpg"; // Imagem usada como fundo
 
+// Componente principal
 function Profissional() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook que permite redirecionar o usuário para outras rotas
 
-  // Função auxiliar para criar os balões
+  // Função auxiliar que cria os "balões" (cards clicáveis)
   const Card = ({ titulo, descricao, destino }) => (
     <div
-      onClick={() => navigate(destino)}
+      onClick={() => navigate(destino)} // Ao clicar, redireciona para a rota indicada
       style={{
         background: "#fdf6f0",
         borderRadius: "16px",
@@ -18,6 +20,7 @@ function Profissional() {
         cursor: "pointer",
       }}
     >
+      {/* Título do card */}
       <p
         style={{
           color: "#3d0c0c",
@@ -28,6 +31,8 @@ function Profissional() {
       >
         {titulo}
       </p>
+
+      {/* Descrição do card */}
       <p
         style={{
           color: "#9e6b6b",
@@ -40,24 +45,29 @@ function Profissional() {
     </div>
   );
 
+  // Estrutura visual do componente
   return (
     <div
       style={{
-        backgroundImage: `url(${fundo})`,
+        backgroundImage: `url(${fundo})`, // Define a imagem de fundo
         backgroundSize: "cover",
         minHeight: "100vh",
       }}
     >
+      {/* Menu de navegação */}
       <Menu />
+
+      {/* Container principal */}
       <div
         style={{
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          flexDirection: "column", // Organiza os elementos em coluna
+          alignItems: "center", // Centraliza horizontalmente
           padding: "40px 16px",
-          gap: "16px",
+          gap: "16px", // Espaçamento entre os elementos
         }}
       >
+        {/* Título da área */}
         <h2
           style={{
             color: "#fdf6f0",
@@ -68,7 +78,7 @@ function Profissional() {
           Área do Profissional
         </h2>
 
-        {/* Balões */}
+        {/* Balões de navegação */}
         <Card
           titulo="Editar Perfil"
           descricao="Altere informações do seu estabelecimento"
@@ -89,7 +99,7 @@ function Profissional() {
           descricao="Conheça mais sobre nosso estabelecimento"
           destino="/sobre"
         />
-        {/* ✅ Novo balão de Assinatura */}
+        {/* Novo balão de Assinatura */}
         <Card
           titulo="Assinatura"
           descricao="Gerencie seu plano de divulgação"
@@ -100,4 +110,5 @@ function Profissional() {
   );
 }
 
+// Exporta o componente para uso em outras partes da aplicação
 export default Profissional;
