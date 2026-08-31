@@ -31,6 +31,7 @@ function Menu() {
         <button className="menu-botao" onClick={() => { navigate('/profissional'); setAberto(false); }}>Profissional</button>
         <button className="menu-botao" onClick={() => { navigate('/area-do-cliente'); setAberto(false); }}>Área do Cliente</button>
         <button className="menu-botao" onClick={() => { navigate('/agendamento'); setAberto(false); }}>Agendar Horário</button>
+<<<<<<< HEAD
         <button className="menu-botao" onClick={() => { navigate('/sobre'); setAberto(false); }}>Sobre nós</button>
         <button className="menu-botao" onClick={() => { navigate('/assinatura'); setAberto(false); }}>Página do associado</button>
         
@@ -38,6 +39,11 @@ function Menu() {
         <button className="menu-botao" onClick={() => { navigate('/central-de-ajuda'); setAberto(false); }}>
           Central de Ajuda
         </button>
+=======
+         <button className="menu-botao" onClick={() => { navigate('/sobre-nexa'); setAberto(false); }}>Sobre nós</button>
+        <button className="menu-botao" onClick={() => setAberto(false)}>Página do associado</button>
+        <button className="menu-botao" onClick={() => { navigate('/central-de-ajuda'); setAberto(false); }}>Central de Ajuda</button>
+>>>>>>> 8bd2ddee83e6a517a4b6c2868e7c7a13680cd57f
       </div>
     </div>
   );

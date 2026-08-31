@@ -7,7 +7,7 @@ import fundo from "../../Componentes/Imagens/nexa_fundo.jpg"; // Imagem usada co
 function Profissional() {
   const navigate = useNavigate(); // Hook que permite redirecionar o usuário para outras rotas
 
-  // Função auxiliar que cria os "balões" (cards clicáveis)
+  // Componente "Card" para criar os balões clicáveis
   const Card = ({ titulo, descricao, destino }) => (
     <div
       onClick={() => navigate(destino)} // Ao clicar, redireciona para a rota indicada
@@ -20,7 +20,7 @@ function Profissional() {
         cursor: "pointer",
       }}
     >
-      {/* Título do card */}
+      {/* Mostra o título recebido por prop */}
       <p
         style={{
           color: "#3d0c0c",
@@ -32,7 +32,7 @@ function Profissional() {
         {titulo}
       </p>
 
-      {/* Descrição do card */}
+      {/* Mostra a descrição recebida por prop */}
       <p
         style={{
           color: "#9e6b6b",
@@ -54,10 +54,10 @@ function Profissional() {
         minHeight: "100vh",
       }}
     >
-      {/* Menu de navegação */}
+      {/* Renderiza a barra de menu no topo */}
       <Menu />
 
-      {/* Container principal */}
+      {/* Div que organiza os cards em coluna centralizada */}
       <div
         style={{
           display: "flex",
@@ -67,7 +67,7 @@ function Profissional() {
           gap: "16px", // Espaçamento entre os elementos
         }}
       >
-        {/* Título da área */}
+        {/* Título da página */}
         <h2
           style={{
             color: "#fdf6f0",
@@ -78,7 +78,7 @@ function Profissional() {
           Área do Profissional
         </h2>
 
-        {/* Balões de navegação */}
+        {/* Cards de navegação */}
         <Card
           titulo="Editar Perfil"
           descricao="Altere informações do seu estabelecimento"
@@ -99,7 +99,6 @@ function Profissional() {
           descricao="Conheça mais sobre nosso estabelecimento"
           destino="/sobre"
         />
-        {/* Novo balão de Assinatura */}
         <Card
           titulo="Assinatura"
           descricao="Gerencie seu plano de divulgação"
@@ -110,5 +109,5 @@ function Profissional() {
   );
 }
 
-// Exporta o componente para uso em outras partes da aplicação
+// Exporta o componente para ser usado no App.js
 export default Profissional;
