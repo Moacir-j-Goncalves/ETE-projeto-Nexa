@@ -9,7 +9,7 @@ const planos = [
   {
     id: "basico",
     nome: "Básico",
-    preco: "47",
+    preco: "12.99",
     periodo: "/mês",
     beneficios: [
       "Agenda online visível ao público",
@@ -21,7 +21,7 @@ const planos = [
   {
     id: "profissional",
     nome: "Profissional",
-    preco: "97",
+    preco: "22.00",
     periodo: "/mês",
     badge: "Mais escolhido",
     beneficios: [
@@ -105,7 +105,7 @@ export default function Assinatura() {
             tamanho="grande"
             className="botao--confirmar"
           >
-            Confirmar plano
+            <p>confirmar</p>
           </Botao>
 
           <p className="assinatura__nota">
